@@ -1,6 +1,6 @@
 public enum SolarSystem {
 
-    MERCURY     (0, 10, null),
+    MERCURY     (0, 10),
     VENUS       (10, 20, MERCURY),
     EARTH       (30, 25, VENUS),
     MARS        (15, 60, EARTH),
@@ -25,6 +25,12 @@ public enum SolarSystem {
         previous.nextPlanet = this;
     }
 
+    SolarSystem(int prevDistance, int radius) {
+        this.distanceFromPreviousPlanet = prevDistance;
+        this.radius = radius;
+        this.distanceToSun = 50;
+    }
+
     public SolarSystem prev() {
         return this == MERCURY ? null : prevPlanet;
     }
@@ -37,4 +43,3 @@ public enum SolarSystem {
         return positionNumberFromSun;
     }
 }
-
