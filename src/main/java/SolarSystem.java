@@ -42,3 +42,4 @@ public enum SolarSystem {
         return positionNumberFromSun;
     }
 }
+
